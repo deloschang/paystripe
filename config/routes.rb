@@ -1,5 +1,6 @@
 Redditpay::Application.routes.draw do
   get "start/index"
+  match 'josh' => 'charges#josh'
 
   resources :charges
 

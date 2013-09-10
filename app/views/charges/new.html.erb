@@ -1,12 +1,38 @@
 <%= form_tag charges_path do %>
   <article>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <span>$5.00 | 50 msgs </span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
+          data-description="50 messages"
           data-amount="500"></script>
+<% end %>
+
+<%= form_tag charges_path do %>
+  <article>
+    <label class="amount">
+      <span>$20.00 | 250 msgs </span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="250 messages"
+          data-amount="2000"></script>
+<% end %>
+
+<%= form_tag charges_path do %>
+  <article>
+    <label class="amount">
+      <span>$50.00 | 800 msgs</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="800 messages"
+          data-amount="5000"></script>
 <% end %>

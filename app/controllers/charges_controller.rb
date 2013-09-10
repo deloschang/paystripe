@@ -2,6 +2,11 @@ class ChargesController < ApplicationController
   def new
   end
 
+  # add endpoint for each sales to differentiate by POST request
+  def josh
+    render :action => :new
+  end
+
   def create
     # Amount in cents
     @amount = 500
