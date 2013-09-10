@@ -9,22 +9,26 @@ class ChargesController < ApplicationController
 
   def create
     # Amount in cents
-    @amount = 500
+    # Very basic level of sanitization
+    @amount = params[:amount].to_i
+    
+    if @amount == 500 || @amount == 2000 || @amount == 5000
+      customer = Stripe::Customer.create(
+        :email => 'example@stripe.com',
+        :card => params[:stripeToken]
+      )
 
-    customer = Stripe::Customer.create(
-      :email => 'example@stripe.com',
-      :card => params[:stripeToken]
-    )
+      charge = Stripe::Charge.create(
+        :customer   => customer.id,
+        :amount     => @amount,
+        :description => 'Payment Customer',
+        :currency => 'usd'
+      )
+    end
 
-    charge = Stripe::Charge.create(
-      :customer   => customer.id,
-      :amount     => @amount,
-      :description => 'Payment Customer',
-      :currency => 'usd'
-    )
-
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to charges_path
-  end
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_to charges_path
+    end
+    
 end

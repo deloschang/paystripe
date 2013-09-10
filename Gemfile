@@ -5,6 +5,10 @@ gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+group :development, :test do
+  gem 'sqlite3' 
+  gem 'debugger'
+end
 
 gem 'pg'
 
@@ -37,7 +41,6 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
 
 # Stripe 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'

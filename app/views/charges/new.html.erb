@@ -5,6 +5,7 @@
     </label>
   </article>
 
+  <input type="hidden" name="amount" value="50"/>
   <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="50 messages"
@@ -18,6 +19,7 @@
     </label>
   </article>
 
+  <input type="hidden" name="amount" value="2000"/>
   <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="250 messages"
@@ -31,6 +33,7 @@
     </label>
   </article>
 
+  <input type="hidden" name="amount" value="5000"/>
   <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="800 messages"
