@@ -1,4 +1,4 @@
-Okcpay::Application.routes.draw do
+Redditpay::Application.routes.draw do
   get "start/index"
 
   resources :charges
@@ -52,7 +52,7 @@ Okcpay::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'start#index'
+   root :to => 'charges#new'
 
   # See how all your routes lay out with "rake routes"
 

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Okcpay::Application.load_tasks
+Redditpay::Application.load_tasks
