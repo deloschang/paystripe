@@ -16,23 +16,21 @@ class ChargesController < ApplicationController
     @amount = params[:amount].to_i
     #@sales = params[:sales]
     
-    if @amount == 500 || @amount == 2000 || @amount == 5000
-      customer = Stripe::Customer.create(
-        :email => 'example@stripe.com',
-        :card => params[:stripeToken]
-      )
+    customer = Stripe::Customer.create(
+      :email => 'example@stripe.com',
+      :card => params[:stripeToken]
+    )
 
-      charge = Stripe::Charge.create(
-        :customer   => customer.id,
-        :amount     => @amount,
-        #:description => @sales,
-        :currency => 'usd'
-      )
-    end
+    charge = Stripe::Charge.create(
+      :customer   => customer.id,
+      :amount     => @amount,
+      #:description => @sales,
+      :currency => 'usd'
+    )
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
-      redirect_to charges_path, :amount => @amount
+      redirect_to charges_path, :amount => @amount / 100
     end
     
 end

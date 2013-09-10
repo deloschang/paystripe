@@ -1,0 +1,1 @@
+SECRET_KEY=sk_test_livXkx2ZDdhi97qRX0OqwElg PUBLISHABLE_KEY=pk_test_z9zIip03Sl4YlMCevSXAEmN3 rs --debugger
