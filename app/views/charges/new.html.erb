@@ -1,50 +1,54 @@
-<div class="row-fluid pricing-table pricing-three-column">
-  <div class="span4 plan">
-    <div class="plan-name-bronze">
-      <h2>Bronze</h2>
-      <span class="lead">50 msgs </span>
-    </div>
-    <ul>
-      <li class="plan-feature lead">$4.99 </li>
-      <%= form_tag charges_path do %>
-        <input type="hidden" name="amount" value="499"/>
-      <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+<div class="block" style="height:800px;">
+  <div class="centered">
+    <div class="row-fluid pricing-table pricing-three-column">
+      <div class="span4 plan">
+        <div class="plan-name-bronze">
+          <h2>Bronze</h2>
+          <span class="lead">50 msgs </span>
+        </div>
+        <ul>
+          <li class="plan-feature lead">$4.99 </li>
+          <%= form_tag charges_path do %>
+            <input type="hidden" name="amount" value="499"/>
+          <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                        data-description="50 messages"
-                        data-amount="500"></script>
-    <% end %>
-    </ul>
-  </div>
-  <div class="span4 plan">
-    <div class="plan-name-silver">
-      <h2>Silver </h2>
-      <span class="lead">250 msgs </span>
-    </div>
-    <ul>
-      <li class="plan-feature lead"><strike>$23.99</strike>   <font color="green">$19.99 <span class="label label-warning">BAS</span></font></li>
-      <%= form_tag charges_path do %>
-        <input type="hidden" name="amount" value="1999"/>
-      <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                              data-description="50 messages"
+                              data-amount="500"></script>
+        <% end %>
+        </ul>
+      </div>
+      <div class="span4 plan">
+        <div class="plan-name-silver">
+          <h2>Silver </h2>
+          <span class="lead">250 msgs </span>
+        </div>
+        <ul>
+          <li class="plan-feature lead"><strike>$23.99</strike>   <font color="green">$19.99 <span class="label label-warning">BAS</span></font></li>
+          <%= form_tag charges_path do %>
+            <input type="hidden" name="amount" value="1999"/>
+          <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                        data-description="250 messages"
-                        data-amount="1999"></script>
-    <% end %>
-    </ul>
-  </div>
-  <div class="span4 plan">
-    <div class="plan-name-gold">
-      <h2>Gold</h2>
-      <span class="lead">800 msgs </span>
-    </div>
-    <ul>
-      <li class="plan-feature lead">$49.99 </li>
-      <%= form_tag charges_path do %>
-        <input type="hidden" name="amount" value="4999"/>
-      <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                              data-description="250 messages"
+                              data-amount="1999"></script>
+        <% end %>
+        </ul>
+      </div>
+      <div class="span4 plan">
+        <div class="plan-name-gold">
+          <h2>Gold</h2>
+          <span class="lead">800 msgs </span>
+        </div>
+        <ul>
+          <li class="plan-feature lead">$49.99 </li>
+          <%= form_tag charges_path do %>
+            <input type="hidden" name="amount" value="4999"/>
+          <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                        data-description="800 messages"
-                        data-amount="4999"></script>
-    <% end %>
-    </ul>
+                              data-description="800 messages"
+                              data-amount="4999"></script>
+        <% end %>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
