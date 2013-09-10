@@ -1,6 +1,8 @@
 Okcpay::Application.routes.draw do
   get "start/index"
 
+  resources :charges
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
