@@ -1,3 +1,4 @@
+
 <div class="block" style="height:800px;">
   <div class="centered">
     <div class="row-fluid pricing-table pricing-three-column">
@@ -7,13 +8,14 @@
           <span class="lead">50 msgs </span>
         </div>
         <ul>
-          <li class="plan-feature lead">$4.99 </li>
+          <li class="plan-feature ">$4.99 </li>
+          <li class="plan-feature consult">Free consultation</li>
           <%= form_tag charges_path do %>
             <input type="hidden" name="amount" value="499"/>
           <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                               data-description="50 messages"
-                              data-amount="500"></script>
+                              data-amount="499"></script>
         <% end %>
         </ul>
       </div>
@@ -23,7 +25,8 @@ data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           <span class="lead">250 msgs </span>
         </div>
         <ul>
-          <li class="plan-feature lead"><strike>$23.99</strike>   <font color="green">$19.99 <span class="label label-warning">BAS</span></font></li>
+          <li class="plan-feature"><strike>$23.99</strike>   <font color="green">$19.99 <span class="label label-warning">BAS</span></font></li>
+          <li class="plan-feature consult">3 Consultations</li>
           <%= form_tag charges_path do %>
             <input type="hidden" name="amount" value="1999"/>
           <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
@@ -39,7 +42,8 @@ data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           <span class="lead">800 msgs </span>
         </div>
         <ul>
-          <li class="plan-feature lead">$49.99 </li>
+          <li class="plan-feature">$49.99 </li>
+          <li class="plan-feature consult">5 Consultations</li>
           <%= form_tag charges_path do %>
             <input type="hidden" name="amount" value="4999"/>
           <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
