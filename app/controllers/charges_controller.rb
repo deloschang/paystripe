@@ -18,15 +18,16 @@ class ChargesController < ApplicationController
     
     customer = Stripe::Customer.create(
       :email => 'example@stripe.com',
-      :card => params[:stripeToken]
+      :card => params[:stripeToken],
+      :plan => params[:plan]
     )
 
-    charge = Stripe::Charge.create(
-      :customer   => customer.id,
-      :amount     => @amount,
-      #:description => @sales,
-      :currency => 'usd'
-    )
+    #charge = Stripe::Charge.create(
+      #:customer   => customer.id,
+      #:amount     => @amount,
+      ##:description => @sales,
+      #:currency => 'usd'
+    #)
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
