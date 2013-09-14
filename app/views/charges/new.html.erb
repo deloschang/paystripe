@@ -8,7 +8,6 @@
         </div>
         <ul>
           <li class="plan-feature ">$5 </li>
-          <li class="plan-feature consult">Free consultation</li>
           <%= form_tag charges_path do %>
             <input type="hidden" name="plan" value="bronze"/>
             <input type="hidden" name="amount" value="500"/>
@@ -26,7 +25,6 @@ data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
         </div>
         <ul>
           <li class="plan-feature"><strike>$11.50</strike>   <font color="green">$10 <span class="label label-warning">Reddit</span></font></li>
-          <li class="plan-feature consult">2 Consultations</li>
           <%= form_tag charges_path do %>
             <input type="hidden" name="plan" value="silver"/>
             <input type="hidden" name="amount" value="1000"/>
@@ -44,7 +42,6 @@ data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
         </div>
         <ul>
           <li class="plan-feature">$20 </li>
-          <li class="plan-feature consult">3 Consultations</li>
           <%= form_tag charges_path do %>
             <input type="hidden" name="plan" value="gold"/>
             <input type="hidden" name="amount" value="2000"/>
