@@ -14,24 +14,35 @@ class ChargesController < ApplicationController
     # Amount in cents
     # Very basic level of sanitization
     @amount = params[:amount].to_i
-    #@sales = params[:sales]
+    @plan = params[:plan]
     
     # check to see if profile setup first
-    
-    customer = Stripe::Customer.create(
-      :email => 'example@stripe.com',
-      :card => params[:stripeToken],
+    if @plan == 'setup'
+      customer = Stripe::Customer.create(
+        :email => 'example@stripe.com',
+        :card => params[:stripeToken],
+      )
+      charge = Stripe::Charge.create(
+        :customer   => customer.id,
+        :amount     => @amount,
+        #:description => @sales,
+        :currency => 'usd'
+      )
 
-      # modify?
-      :plan => params[:plan]
-    )
+    else 
+      # Normal recurrent billing 
+      customer = Stripe::Customer.create(
+        :email => 'example@stripe.com',
+        :card => params[:stripeToken],
 
-    #charge = Stripe::Charge.create(
-      #:customer   => customer.id,
-      #:amount     => @amount,
-      ##:description => @sales,
-      #:currency => 'usd'
-    #)
+        # modify?
+        :plan => @plan
+      )
+
+      # Store the customer ID into the PG database
+      # Infinite loading error?
+    end
+
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
