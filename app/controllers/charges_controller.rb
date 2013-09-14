@@ -16,9 +16,13 @@ class ChargesController < ApplicationController
     @amount = params[:amount].to_i
     #@sales = params[:sales]
     
+    # check to see if profile setup first
+    
     customer = Stripe::Customer.create(
       :email => 'example@stripe.com',
       :card => params[:stripeToken],
+
+      # modify?
       :plan => params[:plan]
     )
 

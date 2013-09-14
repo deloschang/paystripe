@@ -1,5 +1,5 @@
 
-  <div style="margin-top:200px;">
+  <div style="margin-top:100px;">
     <div class="row-fluid pricing-table pricing-three-column">
       <div class="span4 plan">
         <div class="plan-name-bronze">
@@ -56,4 +56,27 @@ data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
         </ul>
     </div>
   </div>
+    <div class="row-fluid pricing-table pricing-three-column" style="margin-top:10px;">
+        <div class="span4 plan"> 
+        </div>
+
+        <div class="span4 plan">
+          <div class="plan-name-setup">
+            <h2>Platinum</h2>
+            <span class="lead">Advanced Profile Setup</span>
+          </div>
+          <ul>
+            <li class="plan-feature">$30 </li>
+            <li class="plan-feature consult">Guaranteed inc. Response Rate</li>
+            <%= form_tag charges_path do %>
+              <input type="hidden" name="plan" value="setpu"/>
+              <input type="hidden" name="amount" value="3000"/>
+            <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                                data-description="Advanced Profile Setup"
+                                data-amount="3000"></script>
+          <% end %>
+          </ul>
+      </div>
+      </div>
 </div>
