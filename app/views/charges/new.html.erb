@@ -66,6 +66,7 @@ data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           <ul>
             <li class="plan-feature">$30 </li>
             <li class="plan-feature consult">Guaranteed inc. Response Rate</li>
+            <li class="plan-feature">100 FREE msgs included</li>
             <%= form_tag charges_path do %>
               <input type="hidden" name="plan" value="setup"/>
               <input type="hidden" name="amount" value="3000"/>
