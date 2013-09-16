@@ -1,4 +1,4 @@
   <div class="margin-top:200px;">
-    <h2>Thanks, you paid $<strong><%= @amount / 100.00 %></strong>. </h2>
-    <h3>You will receive a follow-up in 24 hrs</h3>
+    <h2>Thanks, you paid $<strong><%= number_with_precision @amount / 100, :precision => 2%></strong>. </h2>
+    <h3>You will receive a follow-up within 24 hrs</h3>
   </div>

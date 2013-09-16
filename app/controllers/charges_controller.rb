@@ -30,7 +30,7 @@ class ChargesController < ApplicationController
       )
 
     else 
-      # Normal recurrent billing 
+      # Subscription billing 
       customer = Stripe::Customer.create(
         :email => 'example@stripe.com',
         :card => params[:stripeToken],
